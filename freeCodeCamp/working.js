@@ -1,17 +1,25 @@
-function chunk(arr, size){
-    var outerArr = [];
+function Product(name, price) {
+  this.name = name;
+  this.price = price;
 
-    for(var i = 0; i < arr.length; i += size){
-        var innerArr = arr.slice(i, size + i);
-        outerArr.push(innerArr);  
-    }
-
-return outerArr;
-
-
+  if (price < 0) {
+    throw RangeError('Cannot create product ' +
+                      this.name + ' with a negative price');
+  }
 }
-chunk([0, 1, 2, 3, 4, 5, 6, 7, 8], 4);
 
-//slice(0,5)
-			
-//[[0, 1, 2, 3], [4, 5, 6, 7], [8]]
+function Food(name, price) {
+  Product.call(this, name, price);
+  this.category = 'food';
+}
+
+function Toy(name, price) {
+  Product.call(this, name, price);
+  this.category = 'toy';
+}
+
+var cheese = new Food('feta', 5);
+var fun = new Toy('robot', 40);
+
+console.log(cheese);
+console.log(Food.feta);
