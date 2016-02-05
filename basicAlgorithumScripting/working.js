@@ -8,6 +8,8 @@ function Product(name, price) {
   }
 }
 
+//change
+
 function Food(name, price) {
   Product.call(this, name, price);
   this.category = 'food';
