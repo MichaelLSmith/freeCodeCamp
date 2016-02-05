@@ -37,4 +37,4 @@ ehthumbs.db
 Thumbs.db
 
 # External JS Libraries #
-./calculator/js/libraries
+./calculator/js/libraries/*.js
