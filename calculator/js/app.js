@@ -24,6 +24,8 @@ var decimal = document.querySelector('#decimal');
 
 //operator variables
 var add = document.querySelector('#add');
+var subtract = document.querySelector('#subtract');
+var multiply = document.querySelector('#multiply');
 var negative = document.querySelector('#subtract');
 var equals = document.querySelector('#equals');
 
