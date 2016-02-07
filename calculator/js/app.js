@@ -1,13 +1,3 @@
-
-
-/*
-The <-- button must clear the last number in the string. 
-The CE button clears the entire string
-The CA Button clears the running total var.
-
-*/
-
-
 //variable to store keypad number entries. Must be cleared after pressing equal button. 
 var num = '';
 var runningTotalInt = 0;
@@ -22,7 +12,6 @@ console.dir(output);
 var keyboard = document
     .querySelector('#keyboard')
     .addEventListener("click", inputNum, false);
-
 
 //this fuction concatinates the numbers as they are entered.
 function inputNum(evt){
@@ -39,8 +28,6 @@ function inputNum(evt){
   //method to stop the event firing once it reaches the parent element
   evt.stopPropagation();
 }
-
-
 
 equals = document.querySelector('#equals').addEventListener('click', compute, false);
 
@@ -64,18 +51,33 @@ function compute(evt){
     console.log('runningTotalStr: '+runningTotalStr);
 }
 
-backspace = document.querySelector('#backspace').addEventListener('click', backspaceFun, false);
+erase = document.querySelector('#erase').addEventListener('click', eraseFun, false);
 
-function backspaceFun(){  
-    num = num.substring(0, num.length -1);
-    output.value = num;
-    console.log('num in backspaceFun: '+num);
+//function to operate all the delete buttons
+function eraseFun(evt){
+    console.dir(evt.target.id);
+    if(evt.target !== evt.currentTarget){
+        // The <-- button clears the last number in the string.
+        if(evt.target.id === 'backspace'){ 
+            console.log('backspaceFun');
+            num = num.substring(0, num.length -1);
+            console.log('num in backspaceFun: '+num);
+            output.value = num;
+        }
+        // The CE button clears the entire string
+        if(evt.target.id === 'clearNum'){
+            console.log('clearNum');
+            num = '';
+            output.value = runningTotalInt;
+            console.log('num in clearnum: '+num);
+        }
+        // The CA Button clears the running total var
+        if(evt.target.id === 'clearRunning'){
+            console.log('clearRunning');
+            runningTotalInt = 0;
+            runningTotalStr = '';
+            output.value = '';
+        }
+    }
+    evt.stopPropagation();    
 }
-
-clearNum = document.querySelector('#clearNum').addEventListener('click', clearNumFun, false);
-
-function clearNumFun(){
-    num = '';
-    output.value = num;
-}
-
