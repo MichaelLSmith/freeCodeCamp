@@ -9,9 +9,9 @@ console.log('output');
 console.dir(output);
 
 //variable to add an event listener to each number button
-var keyboard = document
-    .querySelector('#keyboard')
-    .addEventListener("click", inputNum, false);
+var keyboard = document.querySelector('#keyboard');
+    keyboard.addEventListener("click", inputNum, false);
+    console.dir(keyboard);
 
 //this fuction concatinates the numbers as they are entered.
 function inputNum(evt){
@@ -29,7 +29,9 @@ function inputNum(evt){
   evt.stopPropagation();
 }
 
-equals = document.querySelector('#equals').addEventListener('click', compute, false);
+equals = document.querySelector('#equals');
+equals.addEventListener('click', compute, false);
+console.log(equals);
 
 function compute(evt){
     console.dir(evt);
