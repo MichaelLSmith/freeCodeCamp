@@ -9,8 +9,11 @@ console.log('output');
 console.dir(output);
 
 //variable to add an event listener to each number button
-var keyboard = document.querySelector('#keyboard');
-    keyboard.addEventListener("click", inputNum, false);
+var keyboard = document.querySelectorAll('div');
+for(var i = 0; i <= keyboard.length; i++){
+    // keyboard[i].addEventListener("click", inputNum, true);
+    console.log(keyboard[0]);
+}
     console.dir(keyboard);
 
 //this fuction concatinates the numbers as they are entered.
