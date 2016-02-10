@@ -9,12 +9,16 @@ console.log('output');
 console.dir(output);
 
 //variable to add an event listener to each number button
-var keyboard = document.querySelectorAll('div');
-for(var i = 0; i <= keyboard.length; i++){
-    // keyboard[i].addEventListener("click", inputNum, true);
-    console.log(keyboard[0]);
-}
-    console.dir(keyboard);
+var keyboard = document.getElementsByClassName('keyboard');
+    // keyboard.addEventListener("click", inputNum, true);
+
+    for(var i = 0; i < keyboard.length; i++){
+        console.log(keyboard[i]);
+        keyboard[i].addEventListener('click', inputNum,true);
+    }
+
+
+    
 
 //this fuction concatinates the numbers as they are entered.
 function inputNum(evt){

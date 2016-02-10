@@ -10,32 +10,25 @@
     background: black;
 }
 
-/*.centerContents {
-    width: 85%;
-    margin: 0 auto 0 auto;
-}*/
+.inner {
+    max-width: 85%;
+    margin: auto;
+}
 
 #screen {
-    /*width: 90%;*/
-    /*margin: 0 auto 0 auto;*/
-    border: solid black 5px;
+    width: 100%;
+    margin: 0 auto 0 auto;
+    border: solid black 1px;
     display: block;
     -webkit-border-radius: 25px;
     -moz-border-radius: 25px;
     border-radius: 25px;
 }
 
-#keyboard {
-   /* width: 90%;
-    marg*/in: 0 auto 0 auto;
-}
-
-#keyboard button {
-   /* display: inline-block;
-    width: 27px;
-    text-align: center;
-    margin: auto*/
-}
+/*.keyboard {
+    max-width: 85%;
+    margin: auto;
+}*/
 
 /*Responsive Grid from: http://www.responsivegridsystem.com/ */
 /*  SECTIONS  */
