@@ -1,31 +1,34 @@
 function sumAll(arr) {
 
-    // var max = Math.max.apply(null, arr); 
-    // var min = Math.min.apply(null, arr);
-    //using sort will arrange the array with min,max org.
+    var max = Math.max.apply(null, arr); 
+    var min = Math.min.apply(null, arr);
+    var run = max - min;
     
+    var sum = min;  //3
+    var prev;//1
+    var cur; //2
     
-    var allNums = [1,4];
-    
-    //a for each that adds 1 to each number, but how do you add the new nums to the array while the foreach is working on it?
-    allNums.forEach(function(v,i){
-       allNums.push(v + 1);
-       console.log(allNums);
-    });
-    
-    
-
-    
-    
-    
-    
-    
-    
-    // var sum = arr.reduce(function(prev,cur){
-    //     return prev + cur;
-    // });
+    for(var i = 1; i <= run; i++){
+        if(i === 1){prev = min;//1
+        }
+        else prev = cur;
+        
+        cur = prev + 1; // 2
+        
+        console.log('index: ' + i);
+        console.log('prev: '+prev);
+        console.log('cur: '+cur);
+        console.log('sum before add: '+sum);
+        
+        //sum prev and cur num
+        sum += cur; //3
+        
+        console.log('final sum: '+ sum);
+        
+    }
     
     // return sum;
+    
 }
 
-console.log(sumAll([1, 4]));
+sumAll([5, 10]);
