@@ -1,3 +1,6 @@
+var t0 = performance.now();
+console.log(t0);
+
 function diff(arr1, arr2) {
   // Same, same; but different.
   var arr = arr1.concat(arr2);
@@ -22,7 +25,16 @@ function diff(arr1, arr2) {
   
   var newArr = arr.filter(unique);
   
+
+
   return newArr;
 }
 
-diff([1, 2, 3, 5], [1, 2, 3, 4, 5]);
+console.log(diff([1, "calf", 3, "piglet"], [1, "calf", 3, 4]));
+
+var t1 = performance.now();
+console.log(t1);
+
+console.log( "Call to diff took " + (t1 - t0) + " milliseconds.");
+// diff( ["diorite", "andesite", "grass", "dirt", "pink wool", "dead shrub"], ["diorite", "andesite", "grass", "dirt", "dead shrub"] );
+
