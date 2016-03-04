@@ -26,6 +26,10 @@ function diff(arr1, arr2) {
     console.log(len);
 
     for(var i = 0; i<len; i++){
+      //combine two arrays into one with concat
+      //sort the combined array: how will this work with diff types?
+      //go to the middle of the array: length/2
+      
 }
   
     return newArr;
