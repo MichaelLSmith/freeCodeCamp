@@ -3,19 +3,36 @@ function whereAreYou(collection, source) {
   var arr = [];
   // Only change code below this line
 
-//loop through array of objects (collection), searching for property value from source object.
+
+
+// 1. During the collection loop, for each key/value pair, run the source loop.
+
+//      1.b for each collection obj k/v pair, check entire source obj.
+
+// 2. For each source object compare the active source key/value pair to the active collection k/v pair.
+
+// 3. If the source obj does not have the active collection k/v pair, move onto the next collection obj.
+
+//4. If the source obj has the the active collection k/v pair, move on to the next source obj k/v pair
+
+//If the 
+
 
 //Collection Array
 // 1. loop through collection array of objects
 // 2. iterate through each object using a for in loop
 
-//Source Object
-// 3. Look in source obj 
+    
+    //Source Object
+    // 1. Look through source obj
+    // 2. Save something in a variable??? is this necessary?
 
 
 
+// 3. If they match, continue to the next source k/v pair
+//Questions
+// 1. How do you know if you've reached the end of the source object?
 
-// 3. iterate through source object to compare if it matches the active property of current object property from the collection.
 
 
 //Source Loop
@@ -42,17 +59,9 @@ for (var i = 0; i < collection.length; i++) {
     }
 }
 
-
-  
-  
   // Only change code above this line
 //   return arr;
 }
-
-
-
-
-
 
 whereAreYou([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" });
 
