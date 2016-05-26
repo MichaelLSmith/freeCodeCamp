@@ -32,6 +32,11 @@ function whereAreYou(collection, source) {
 
 //Collection loop;
 console.log('collection loop');
+
+//get an array of
+
+
+
 for (var i = 0; i < collection.length; i++) {
     
     var c = collection[i];
