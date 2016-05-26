@@ -33,30 +33,33 @@ function whereAreYou(collection, source) {
 //Collection loop;
 console.log('collection loop');
 
-//get an array of
-
-
-
+//for loop to access each object in the collection array
 for (var i = 0; i < collection.length; i++) {
     
+    // c holds each obj for each running of the collection loop
     var c = collection[i];
+    console.log('acitve collection k/v:');
     console.log(c);
-    
+
+    //for loop to go through each obj
     for (var key in c) {
         if (c.hasOwnProperty(key)) {
             console.log(key + "->" + c[key]);   
         } 
     }
+    
+    //Source Loop
+        console.log('source Loop');
+        console.log(source);
+        for (var key in source){
+            if (source.hasOwnProperty(key)){
+                console.log(key + "->" + source[key]);        
+            }
+        }
+        console.log('source loop end');
+        //source loop end
 }
 
-//Source Loop
-console.log('source Loop');
-console.log(source);
-for (var key in source){
-    if (source.hasOwnProperty(key)){
-        console.log(key + "->" + c[key]);        
-    }
-}
 
 
   // Only change code above this line
