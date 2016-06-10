@@ -12,6 +12,8 @@ function translatePigLatin(str) {
       }
     })();
 
+    console.log('initial string: ' + str);
+
     //find the first instance of a vowel in the str.
     //search for the regex from vowelTest.
     re = /[aeiou]/i;
@@ -19,42 +21,61 @@ function translatePigLatin(str) {
     console.log(`firstVowel: ${firstVowel}`);
 
     //create a substr of str the firstVowel forward and split it into an array
-    subStr = str.substr(firstVowel).split('');
-    console.log(`subStr ${subStr}`);
+    subStr = str.substr(firstVowel)
+    subStr = subStr.split('');
+    // console.log(typeof subStr );
+    console.log(`subStr: ${subStr}`);
 
     //get all the consonants that come before first vowel
 
-    
+    var cons = str.substring(0,firstVowel);
+    cons = cons.split('');
+    console.log(`cons: ${cons}`);
+    console.log(cons[0]);
 
-    //get the first character in the string and add it to an array.
-    // var suffixArr = [str[0]];
-    // var firstChar = str[0];
+    if (cons[0] === undefined) {
+        console.log('in if');
+        subStr.push('w');
+    }
+    else {
+        for(let i = 0; i < cons.length; i++){
+        subStr.push(cons[i]);
+        }
+    }
+        subStr.push('a','y');
+        console.log(subStr);
+    str = subStr.join('');
+    console.log(str);
 
-    // console.log(suffixArr);
-    // console.log(firstChar);
-
-    //create new string with first character removed and split it into an array
-    // str = str.substr(1).split('');
-    console.log('str: '+ str);
-
-    //determine if the first character is a vowel or not. If not a vowel, combine character with 'ay'
-    //
-    // if (!vowelTest(firstChar)) {
-    //     console.log('in if statement:');
-    //     str.push(firstChar,'a','y');
-    //     str = str.join('');
-    //     console.log('str: '+ str);
-    // }
-    // else {
-    //     str = str.push('w','a','y')
-    //     str = str.join('');
-    //     console.log('str: '+ str);
-    // }
   return str;
 }
 
-translatePigLatin("california")// should return "aliforniacay".
-// // translatePigLatin("paragraphs") should return "aragraphspay".
-// // translatePigLatin("glove") should return "oveglay".
-// // translatePigLatin("algorithm") should return "algorithmway".
-// // translatePigLatin("eight") should return "eightway".
+// translatePigLatin("california"); // should return "aliforniacay".
+// translatePigLatin("paragraphs"); // should return "aragraphspay".
+// translatePigLatin("glove");// should return "oveglay".
+// translatePigLatin("algorithm"); // should return "algorithmway".
+// translatePigLatin("eight"); //should return"eightway".
+
+
+//tests:
+// console.log('test.js');
+// //
+// //
+// (function () {
+//   'use strict';
+//
+//   describe('translatePigLatin', function () {
+//       it('translates california to aliforniacay', function () {
+//         expect(translatePigLatin('california')).toEqual('aliforniacay');
+//       });
+//       it('translates paragraphs to aragraphspay', function () {
+//         expect(translatePigLatin('paragraphs')).toEqual('aragraphspay');
+//       });
+//       it('translates glove to oveglay', function () {
+//         expect(translatePigLatin('glove')).toEqual('oveglay');
+//       });
+//       it('translates eight to eightway', function () {
+//         expect(translatePigLatin('eight')).toEqual('eightway');
+//       });
+//   });
+// })();
