@@ -16,9 +16,10 @@ function fearNotLetter(str) {
         console.log(currentCode + 1);
         nextCode = str.charCodeAt(i + 1);
         console.log('nextCode: ' + nextCode)
-        if(currentCode + 1 !== nextCode) {
+        if(!isNaN(currentCode + 1) && currentCode + 1 !== nextCode) {
             console.log('in if statement');
-            missingCode = nextCode;
+            missingCode = currentCode + 1;
+            console.log('missingCode:');
             console.log(missingCode);
             console.log('end of 1st if statement');
         }
@@ -26,14 +27,16 @@ function fearNotLetter(str) {
 
     console.log('missingCode: ' + missingCode);
     // missingCode !== undefined ? str = String.fromCharCode(missingCode) : str = missingCode;
+    // 
+    // if(missingCode !== undefined) {
+    //     console.log('in 2nd if statement');
+    //     console.log('missingCode');
+    //     str = String.fromCharCode(missingCode);
+    //     console.log('end of 2nd if');
+    // }
+    // else { str = missingCode };
 
-    if(missingCode !== undefined) {
-        console.log('in 2nd if statement');
-        console.log('missingCode');
-        str = String.fromCharCode(missingCode);
-        console.log('end of 2nd if');
-    }
-    else { str = missingCode };
+    missingCode !== undefined ? str = String.fromCharCode(missingCode) : str = missingCode;
 
     console.log(str);
 
