@@ -1,11 +1,12 @@
-var p = {
-    "p1": "value1",
-    "p2": "value2",
-    "p3": "value3"
-};
+var funcs = [];
+for (var i = 0; i < 3; i++) {
+  funcs[i] = function() {
+    console.log("My value: " + i);
+  };
+}
 
-for (var key in p) {
-  if (p.hasOwnProperty(key)) {
-    console.log(key + " -> " + p[key]);
-  }
+console.log(funcs);
+
+for (var j = 0; j < 3; j++) {
+  funcs[j]();
 }

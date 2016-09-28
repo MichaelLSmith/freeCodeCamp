@@ -2,40 +2,45 @@
 function myReplace(str, before, after) {
     
     var capPos = before.search(/[A-Z]/);
-    console.log(before);
-    console.log(capPos);
+    // console.log('before: '+ before);
+    // console.log('after: '+ after);
+    // console.log('capPos' + capPos);
     
-    if (capPos === 0) {
-        after.charAt(0)
+    if (capPos >= 0) {
+        //there is a capital letter in before, than capitalize the first letter of after.
+        // console.log('after.charAt(capPos)');
+        // console.log(after.charAt(capPos));
+        var chartoCaps = after.charAt(capPos);
+        // capitalizeAt()
+        after   = after.substr(0, capPos) 
+                //extracts all the chars from index --> forward. In this case, it's the entire string.
+                + chartoCaps.toUpperCase()
+                //capitalize and attach the new character to remaining string
+                + after.substr(capPos + chartoCaps.length);
+                //attach the a copy of string after the index position where the first substr extracted from
+        // console.log(after);
     }
+    str = str.replace(before, after);
     
-    var nString = str.replace(before, after);
-    
-    //the next step is to be case sensitive.
-    //use a regular expression on the original string, searching for any capital letter other than the first letter.
-    //if it find any, save its index position and then replace it in the new string.
-    //Alternative: the reg expression finds any caps on the before variable, convert the first letter of the after variable.
-    
-    // console.log(nString);
+    console.log(str);
     
     //check out this page: http://stackoverflow.com/questions/1431094/how-do-i-replace-a-character-at-a-particular-index-in-javascript
     //the solution with 40 votes.
     
-    
+    // console.log(str);
     
 //   return str;
 }
 
 myReplace("A quick brown fox jumped over the lazy dog", "jumped", "leaped");
 // should return "A quick brown fox leaped over the lazy dog"
-
-myReplace("Let us go to the store", "store", "mall")
+myReplace("Let us go to the store", "store", "mall");
 //should return "Let us go to the mall".
-myReplace("He is Sleeping on the couch", "Sleeping", "sitting")
+myReplace("He is Sleeping on the couch", "Sleeping", "sitting");
 //should return "He is Sitting on the couch".
-myReplace("This has a spellngi error", "spellngi", "spelling")
+myReplace("This has a spellngi error", "spellngi", "spelling");
 //should return "This has a spelling error".
-myReplace("His name is Tom", "Tom", "john")
+myReplace("His name is Tom", "Tom", "john");
 //should return "His name is John".
-myReplace("Let us get back to more Coding", "Coding", "algorithms")
+myReplace("Let us get back to more Coding", "Coding", "algorithms");
 // should return "Let us get back to more Algorithms".
