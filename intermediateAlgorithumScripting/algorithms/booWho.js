@@ -17,3 +17,16 @@ function booWho(bool){
 
 booWho(false);
 booWho(true);
+
+/*Official solution from: Free Code Camp:
+http://forum.freecodecamp.com/t/algorithm-boo-who/16000
+
+*/
+
+
+function booWho(bool) {
+  return typeof bool === 'boolean';
+}
+
+// test here
+booWho(null);
